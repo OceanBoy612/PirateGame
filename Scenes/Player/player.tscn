@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxgy6d7d5oe1f"]
+
+[ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_dliua"]
+[ext_resource type="Texture2D" uid="uid://bu1h8qvy66xtj" path="res://Art/ship (1).png" id="2_lr03s"]
+[ext_resource type="AudioStream" uid="uid://cn6hn8fv6eta5" path="res://Sounds/Cannon.mp3" id="3_ene07"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3d612"]
+radius = 17.0
+height = 88.0
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_dliua")
+
+[node name="ShipArt" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("2_lr03s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3d612")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="LeftCannonLocation" type="Marker2D" parent="."]
+position = Vector2(18, 0)
+
+[node name="CannonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ene07")
+volume_db = -15.0
