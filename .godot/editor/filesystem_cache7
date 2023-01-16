@@ -1,8 +1,10 @@
 0b7126e0c6e86d3ec295a72f5aa6e0bd
-::res://::1673894134
-level_1.tscn::PackedScene::6145125406932896623::1673856812::0::1::::<><>::uid://dgn4nl1xoeilh<>uid://dxgy6d7d5oe1f<>uid://bumwfgea8at7g
-::res://Art/::1673855588
+::res://::1673895735
+level_1.tscn::PackedScene::6145125406932896623::1673894139::0::1::::<><>::uid://dgn4nl1xoeilh<>uid://dxgy6d7d5oe1f<>uid://bumwfgea8at7g
+::res://Art/::1673895792
+cannon.png::CompressedTexture2D::6335335032105874207::1673895733::1673895735::1::::<><>::
 cannonBall.png::CompressedTexture2D::6340377879782119324::1673849186::1673852372::1::::<><>::
+cannonLoose.png::CompressedTexture2D::3294485173046910333::1673895792::1673895792::1::::<><>::
 icon.svg::CompressedTexture2D::1737131531299710041::1673836209::1673852374::1::::<><>::
 ship (1).png::CompressedTexture2D::3844356202155147027::1673836375::1673852378::1::::<><>::
 ship (2).png::CompressedTexture2D::7367897583734635752::1673855581::1673855588::1::::<><>::
@@ -14,8 +16,8 @@ cannon_ball.tscn::PackedScene::9054621443705242010::1673855517::0::1::::<><>::re
 ::res://Scenes/Pirate/::1673856016
 pirate.gd::GDScript::-1::1673856014::0::1::::<>CharacterBody2D<>::
 pirate.tscn::PackedScene::3816315113676293410::1673856016::0::1::::<><>::uid://dc8cgxox2xpsa<>res://Scenes/Pirate/pirate.gd
-::res://Scenes/Player/::1673856812
+::res://Scenes/Player/::1673894139
 Player.gd::GDScript::-1::1673856735::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::8787504495896597433::1673856812::0::1::::<><>::res://Scenes/Player/Player.gd<>uid://bu1h8qvy66xtj<>uid://cn6hn8fv6eta5
+player.tscn::PackedScene::8787504495896597433::1673894139::0::1::::<><>::res://Scenes/Player/Player.gd<>uid://bu1h8qvy66xtj<>uid://cn6hn8fv6eta5
 ::res://Sounds/::1673856767
 Cannon.mp3::AudioStreamMP3::5749742021316931418::1673856467::1673856767::1::::<><>::

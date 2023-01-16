@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bumwfgea8at7g"]
+[gd_scene load_steps=5 format=3 uid="uid://bumwfgea8at7g"]
 
 [ext_resource type="Texture2D" uid="uid://dc8cgxox2xpsa" path="res://Art/ship (2).png" id="1_h6wpq"]
 [ext_resource type="Script" path="res://Scenes/Pirate/pirate.gd" id="1_x4xys"]
@@ -7,8 +7,10 @@
 radius = 17.0
 height = 90.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_udgrn"]
+radius = 1109.76
+
 [node name="Pirate" type="CharacterBody2D"]
-position = Vector2(-325, -158)
 script = ExtResource("1_x4xys")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,3 +19,8 @@ texture = ExtResource("1_h6wpq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_pwpio")
+
+[node name="SenseingArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SenseingArea"]
+shape = SubResource("CircleShape2D_udgrn")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxgy6d7d5oe1f"]
+[gd_scene load_steps=6 format=3 uid="uid://dxgy6d7d5oe1f"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_dliua"]
 [ext_resource type="Texture2D" uid="uid://bu1h8qvy66xtj" path="res://Art/ship (1).png" id="2_lr03s"]
 [ext_resource type="AudioStream" uid="uid://cn6hn8fv6eta5" path="res://Sounds/Cannon.mp3" id="3_ene07"]
+[ext_resource type="Texture2D" uid="uid://bm64xpa6jtc8l" path="res://Art/cannonLoose.png" id="4_l1f30"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3d612"]
 radius = 17.0
@@ -28,3 +29,8 @@ position = Vector2(18, 0)
 [node name="CannonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ene07")
 volume_db = -15.0
+
+[node name="Cannon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(5, 33)
+texture = ExtResource("4_l1f30")
