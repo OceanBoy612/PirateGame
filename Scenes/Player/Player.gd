@@ -9,6 +9,9 @@ extends CharacterBody2D
 var can_shoot = true
 var cannon_timer = 0
 
+func _ready():
+	set_meta("object", "player")
+
 func _physics_process(delta):
 	cannon_timer += 1
 	if cannon_timer > cannon_cooldown:

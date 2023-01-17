@@ -1,6 +1,6 @@
 CollisionShape2D
-ColorRect
 Area2D
+ColorRect
 Sprite2D
 AudioStreamPlayer
 AudioStreamPlayer2D

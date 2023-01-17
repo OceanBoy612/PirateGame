@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bumwfgea8at7g"]
+[gd_scene load_steps=7 format=3 uid="uid://bumwfgea8at7g"]
 
 [ext_resource type="Texture2D" uid="uid://dc8cgxox2xpsa" path="res://Art/ship (2).png" id="1_h6wpq"]
 [ext_resource type="Script" path="res://Scenes/Pirate/pirate.gd" id="1_x4xys"]
@@ -8,7 +8,13 @@ radius = 17.0
 height = 90.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7vb7v"]
-radius = 299.883
+radius = 676.074
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wl24s"]
+radius = 312.57
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omno3"]
+size = Vector2(357, 20)
 
 [node name="Pirate" type="CharacterBody2D"]
 script = ExtResource("1_x4xys")
@@ -24,3 +30,14 @@ shape = SubResource("CapsuleShape2D_pwpio")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRadius"]
 shape = SubResource("CircleShape2D_7vb7v")
+
+[node name="AttackRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRadius"]
+shape = SubResource("CircleShape2D_wl24s")
+
+[node name="FireArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea"]
+position = Vector2(178.5, 0)
+shape = SubResource("RectangleShape2D_omno3")
