@@ -7,8 +7,8 @@
 radius = 17.0
 height = 90.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_udgrn"]
-radius = 1109.76
+[sub_resource type="CircleShape2D" id="CircleShape2D_7vb7v"]
+radius = 299.883
 
 [node name="Pirate" type="CharacterBody2D"]
 script = ExtResource("1_x4xys")
@@ -20,7 +20,7 @@ texture = ExtResource("1_h6wpq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_pwpio")
 
-[node name="SenseingArea" type="Area2D" parent="."]
+[node name="DetectRadius" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SenseingArea"]
-shape = SubResource("CircleShape2D_udgrn")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRadius"]
+shape = SubResource("CircleShape2D_7vb7v")
