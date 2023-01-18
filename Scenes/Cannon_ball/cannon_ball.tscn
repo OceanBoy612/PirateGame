@@ -1,16 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2aej642yvpxi"]
+[gd_scene load_steps=6 format=3 uid="uid://d2aej642yvpxi"]
 
 [ext_resource type="Script" path="res://Scenes/Cannon_ball/cannon_ball.gd" id="1_13qto"]
 [ext_resource type="Texture2D" uid="uid://cwlldkr25jvlk" path="res://Art/cannonBall.png" id="1_vaj3o"]
+[ext_resource type="PackedScene" uid="uid://cgwma8wvt2uv8" path="res://Scenes/Trail/Trail.tscn" id="2_6yg2b"]
+[ext_resource type="AudioStream" uid="uid://c3n76rypp2gx" path="res://Sounds/crashing through debris 14.mp3" id="4_f0y1s"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_maq2k"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_13pkh"]
 radius = 4.0
 
 [node name="CannonBall" type="Area2D"]
 script = ExtResource("1_13qto")
 
+[node name="Trail" parent="." instance=ExtResource("2_6yg2b")]
+modulate = Color(1, 1, 1, 0.337255)
+length = 200
+trail_length = 20
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vaj3o")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_maq2k")
+shape = SubResource("CircleShape2D_13pkh")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_f0y1s")

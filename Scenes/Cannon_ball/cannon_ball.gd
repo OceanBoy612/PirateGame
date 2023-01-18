@@ -14,8 +14,7 @@ func _process(delta):
 
 func _on_HitBox_body_entered(_body):
 	var object = _body.get_meta("object")
-	if object != object_origin:
-		print(object)
-#		object.take_damage()
+	if object != object_origin and _body.has_method("take_damage"):
+		_body.take_damage()
 		queue_free()
 

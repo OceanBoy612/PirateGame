@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cts0k2gpi73ex"]
 
 [ext_resource type="Texture2D" uid="uid://dgn4nl1xoeilh" path="res://Art/tiles_sheet@2.png" id="1_ylv2t"]
-[ext_resource type="PackedScene" uid="uid://dxgy6d7d5oe1f" path="res://Scenes/Player/player.tscn" id="2_hisio"]
-[ext_resource type="PackedScene" uid="uid://bumwfgea8at7g" path="res://Scenes/Pirate/pirate.tscn" id="3_skkuw"]
+[ext_resource type="PackedScene" uid="uid://c6yrcllyjhdjf" path="res://Scenes/Player/player.tscn" id="2_hisio"]
+[ext_resource type="PackedScene" uid="uid://b4tvsw1s6a3f2" path="res://Scenes/Pirate/pirate.tscn" id="3_skkuw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82e88"]
 texture = ExtResource("1_ylv2t")

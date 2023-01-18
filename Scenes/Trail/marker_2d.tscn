@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh6wlbqyfktve"]
+
+[ext_resource type="PackedScene" uid="uid://cgwma8wvt2uv8" path="res://Scenes/Trail/Trail.tscn" id="1_3yac6"]
+
+[node name="Marker2D" type="Marker2D"]
+position = Vector2(0, -30)
+
+[node name="Trail" parent="." instance=ExtResource("1_3yac6")]
+modulate = Color(1, 1, 1, 1)
+width = 40.0
+trail_length = 40

@@ -101,6 +101,7 @@ func _on_FireArea_body_exited(_body):
 
 
 func take_damage():
+	$HitSound.play()
 	health -= 1
 
 

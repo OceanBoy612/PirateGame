@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bumwfgea8at7g"]
+[gd_scene load_steps=10 format=3 uid="uid://b4tvsw1s6a3f2"]
 
 [ext_resource type="Texture2D" uid="uid://dc8cgxox2xpsa" path="res://Art/ship (2).png" id="1_h6wpq"]
 [ext_resource type="Script" path="res://Scenes/Pirate/pirate.gd" id="1_x4xys"]
+[ext_resource type="PackedScene" uid="uid://cgwma8wvt2uv8" path="res://Scenes/Trail/Trail.tscn" id="2_ljbbr"]
 [ext_resource type="AudioStream" uid="uid://cn6hn8fv6eta5" path="res://Sounds/Cannon.mp3" id="3_y0cxf"]
+[ext_resource type="AudioStream" uid="uid://chyj3mcoojehg" path="res://Sounds/Crush.mp3" id="5_jlw8w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwpio"]
 radius = 17.0
@@ -19,6 +21,11 @@ size = Vector2(357, 20)
 
 [node name="Pirate" type="CharacterBody2D"]
 script = ExtResource("1_x4xys")
+
+[node name="Trail" parent="." instance=ExtResource("2_ljbbr")]
+modulate = Color(1, 1, 1, 1)
+width = 60.0
+trail_length = 200
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
@@ -53,3 +60,7 @@ position = Vector2(19, 0)
 [node name="CannonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_y0cxf")
 volume_db = -15.0
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jlw8w")
+volume_db = -11.886

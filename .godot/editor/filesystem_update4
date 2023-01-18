@@ -1,2 +1,9 @@
-res://level_1.tscn
+res://Scenes/Player/player.tscn
+res://Scenes/Player/Player.gd
 res://Scenes/Pirate/pirate.tscn
+res://Scenes/Pirate/pirate.gd
+res://level_1.tscn
+res://Scenes/Trail/Trail.tscn
+res://Scenes/Cannon_ball/cannon_ball.tscn
+res://Scenes/Trail/marker_2d.tscn
+res://Scenes/Cannon_ball/cannon_ball.gd

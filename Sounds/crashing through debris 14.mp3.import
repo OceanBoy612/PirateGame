@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3n76rypp2gx"
+path="res://.godot/imported/crashing through debris 14.mp3-48fad7bae27702516e16a6d02b9e4066.mp3str"
+
+[deps]
+
+source_file="res://Sounds/crashing through debris 14.mp3"
+dest_files=["res://.godot/imported/crashing through debris 14.mp3-48fad7bae27702516e16a6d02b9e4066.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
