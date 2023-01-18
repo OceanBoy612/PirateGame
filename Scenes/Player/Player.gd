@@ -3,8 +3,7 @@ extends CharacterBody2D
 @export var Cannon_ball = preload("res://Scenes/Cannon_ball/cannon_ball.tscn")
 @export var speed = 100.0
 @export var cannon_cooldown = 80
-
-@onready var left_cannon_location = $LeftCannonLocation
+@export var health = 5
 
 var can_shoot = true
 var cannon_timer = 0
@@ -31,8 +30,9 @@ func _physics_process(delta):
 		can_shoot = false
 		cannon_timer = 0
 		var cannon_ball_instance = Cannon_ball.instantiate()
+		cannon_ball_instance.init("player")
 		get_parent().add_child(cannon_ball_instance)
-		cannon_ball_instance.global_position = left_cannon_location.global_position
+		cannon_ball_instance.global_position = $LeftCannonLocation.global_position
 		cannon_ball_instance.rotation = rotation
 		print("FIRE!!!")
 		$CannonSound.play()
@@ -40,3 +40,7 @@ func _physics_process(delta):
 	# Apply Friction
 	velocity *= 0.995
 	move_and_slide()
+
+
+func take_damage():
+	health -= 1

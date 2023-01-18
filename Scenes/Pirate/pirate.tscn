@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bumwfgea8at7g"]
+[gd_scene load_steps=8 format=3 uid="uid://bumwfgea8at7g"]
 
 [ext_resource type="Texture2D" uid="uid://dc8cgxox2xpsa" path="res://Art/ship (2).png" id="1_h6wpq"]
 [ext_resource type="Script" path="res://Scenes/Pirate/pirate.gd" id="1_x4xys"]
+[ext_resource type="AudioStream" uid="uid://cn6hn8fv6eta5" path="res://Sounds/Cannon.mp3" id="3_y0cxf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwpio"]
 radius = 17.0
@@ -24,20 +25,31 @@ position = Vector2(0, 2)
 texture = ExtResource("1_h6wpq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_pwpio")
 
 [node name="DetectRadius" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRadius"]
 shape = SubResource("CircleShape2D_7vb7v")
 
 [node name="AttackRadius" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRadius"]
 shape = SubResource("CircleShape2D_wl24s")
 
 [node name="FireArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea"]
 position = Vector2(178.5, 0)
 shape = SubResource("RectangleShape2D_omno3")
+
+[node name="LeftCannonLocation" type="Marker2D" parent="."]
+position = Vector2(19, 0)
+
+[node name="CannonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y0cxf")
+volume_db = -15.0

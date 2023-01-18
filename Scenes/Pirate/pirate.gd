@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var speed = 30
 @export var cannon_cooldown = 80
+@export var health = 5
+@export var Cannon_ball = preload("res://Scenes/Cannon_ball/cannon_ball.tscn")
 
 enum states {PATROL, CHASE, ATTACK}
 var state = states.PATROL
@@ -14,6 +16,7 @@ var cannon_timer = 0
 var target = null
 
 func _ready():
+	set_meta("object", "pirate")
 	$DetectRadius.body_entered.connect(_on_DetectRadius_body_entered)
 	$DetectRadius.body_exited.connect(_on_DetectRadius_body_exited)
 	$AttackRadius.body_entered.connect(_on_AttackRadius_body_entered)
@@ -47,7 +50,13 @@ func _physics_process(delta):
 			if can_shoot and in_range:
 				can_shoot = false
 				cannon_timer = 0
-				print("FIRE!!!!")
+				var cannon_ball_instance = Cannon_ball.instantiate()
+				cannon_ball_instance.init("pirate")
+				get_parent().add_child(cannon_ball_instance)
+				cannon_ball_instance.global_position = $LeftCannonLocation.global_position
+				cannon_ball_instance.rotation = rotation
+				print("FIRE!!!")
+				$CannonSound.play()
 	
 	velocity = Vector2(0, speed).rotated(rotation)
 	move_and_slide()
@@ -89,6 +98,10 @@ func _on_FireArea_body_exited(_body):
 	var object = _body.get_meta("object")
 	if object == "player":
 		in_range = false
+
+
+func take_damage():
+	health -= 1
 
 
 static func angle_to_angle(from, to):
