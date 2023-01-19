@@ -6,6 +6,6 @@
 position = Vector2(0, -30)
 
 [node name="Trail" parent="." instance=ExtResource("1_3yac6")]
-modulate = Color(1, 1, 1, 1)
+modulate = Color(1, 1, 1, 0.592157)
 width = 40.0
 trail_length = 40

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var Cannon_ball = preload("res://Scenes/Cannon_ball/cannon_ball.tscn")
-@export var speed = 100.0
+@export var speed = 100
 @export var cannon_cooldown = 80
 @export var health = 5
 
@@ -32,8 +32,8 @@ func _physics_process(delta):
 		var cannon_ball_instance = Cannon_ball.instantiate()
 		cannon_ball_instance.init("player")
 		get_parent().add_child(cannon_ball_instance)
-		cannon_ball_instance.global_position = $LeftCannonLocation.global_position
-		cannon_ball_instance.rotation = rotation
+		cannon_ball_instance.global_position = get_node("Cannon/FireLocation").global_position
+		cannon_ball_instance.rotation = $Cannon.global_rotation
 		print("FIRE!!!")
 		$CannonSound.play()
 		

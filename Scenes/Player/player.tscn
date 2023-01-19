@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6yrcllyjhdjf"]
+[gd_scene load_steps=8 format=3 uid="uid://c6yrcllyjhdjf"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_dliua"]
 [ext_resource type="Texture2D" uid="uid://bu1h8qvy66xtj" path="res://Art/ship (1).png" id="2_lr03s"]
 [ext_resource type="PackedScene" uid="uid://dh6wlbqyfktve" path="res://Scenes/Trail/marker_2d.tscn" id="2_y6w1q"]
 [ext_resource type="AudioStream" uid="uid://cn6hn8fv6eta5" path="res://Sounds/Cannon.mp3" id="3_ene07"]
 [ext_resource type="Texture2D" uid="uid://bm64xpa6jtc8l" path="res://Art/cannonLoose.png" id="4_l1f30"]
+[ext_resource type="Script" path="res://Scenes/Player/Cannon.gd" id="6_byy5p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3d612"]
 radius = 17.0
@@ -33,7 +34,13 @@ position = Vector2(18, 0)
 stream = ExtResource("3_ene07")
 volume_db = -15.0
 
-[node name="Cannon" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(5, 33)
+[node name="Cannon" type="Marker2D" parent="."]
+position = Vector2(0, 32)
+script = ExtResource("6_byy5p")
+
+[node name="CannonArt" type="Sprite2D" parent="Cannon"]
+position = Vector2(5, 0)
 texture = ExtResource("4_l1f30")
+
+[node name="FireLocation" type="Marker2D" parent="Cannon"]
+position = Vector2(13, 0)

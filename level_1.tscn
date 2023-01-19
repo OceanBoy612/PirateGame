@@ -602,3 +602,12 @@ layer_3/tile_data = PackedInt32Array(458754, 131073, 2, 393218, 131073, 1, 32768
 position = Vector2(255, 408)
 
 [node name="Pirate" parent="." instance=ExtResource("3_skkuw")]
+
+[node name="Pirate2" parent="." instance=ExtResource("3_skkuw")]
+position = Vector2(-1331, 66)
+
+[node name="Pirate3" parent="." instance=ExtResource("3_skkuw")]
+position = Vector2(-866, 1196)
+
+[node name="Pirate4" parent="." instance=ExtResource("3_skkuw")]
+position = Vector2(557, 1358)

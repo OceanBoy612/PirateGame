@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://cgwma8wvt2uv8" path="res://Scenes/Trail/Trail.tscn" id="2_6yg2b"]
 [ext_resource type="AudioStream" uid="uid://c3n76rypp2gx" path="res://Sounds/crashing through debris 14.mp3" id="4_f0y1s"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_13pkh"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kywec"]
 radius = 4.0
 
 [node name="CannonBall" type="Area2D"]
+z_index = 2
 script = ExtResource("1_13qto")
 
 [node name="Trail" parent="." instance=ExtResource("2_6yg2b")]
@@ -20,7 +21,7 @@ trail_length = 20
 texture = ExtResource("1_vaj3o")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_13pkh")
+shape = SubResource("CircleShape2D_kywec")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_f0y1s")

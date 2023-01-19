@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4tvsw1s6a3f2"]
+[gd_scene load_steps=11 format=3 uid="uid://b4tvsw1s6a3f2"]
 
 [ext_resource type="Texture2D" uid="uid://dc8cgxox2xpsa" path="res://Art/ship (2).png" id="1_h6wpq"]
 [ext_resource type="Script" path="res://Scenes/Pirate/pirate.gd" id="1_x4xys"]
@@ -17,7 +17,10 @@ radius = 676.074
 radius = 312.57
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omno3"]
-size = Vector2(357, 20)
+size = Vector2(341, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1ft0"]
+size = Vector2(4.83564, 51.9329)
 
 [node name="Pirate" type="CharacterBody2D"]
 script = ExtResource("1_x4xys")
@@ -32,30 +35,36 @@ position = Vector2(0, 2)
 texture = ExtResource("1_h6wpq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_pwpio")
 
 [node name="DetectRadius" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRadius"]
 shape = SubResource("CircleShape2D_7vb7v")
 
 [node name="AttackRadius" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRadius"]
 shape = SubResource("CircleShape2D_wl24s")
 
 [node name="FireArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea"]
-position = Vector2(178.5, 0)
+position = Vector2(136, 135)
+rotation = 0.8159
+shape = SubResource("RectangleShape2D_omno3")
+
+[node name="FireAreaRight" type="Area2D" parent="."]
+position = Vector2(-9, -10)
+rotation = 1.49265
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireAreaRight"]
+position = Vector2(136, 135)
+rotation = 0.8159
 shape = SubResource("RectangleShape2D_omno3")
 
 [node name="LeftCannonLocation" type="Marker2D" parent="."]
-position = Vector2(19, 0)
+position = Vector2(24, 17)
 
 [node name="CannonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_y0cxf")
@@ -64,3 +73,21 @@ volume_db = -15.0
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_jlw8w")
 volume_db = -11.886
+
+[node name="LeftFeeler" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFeeler"]
+position = Vector2(-36, 57)
+rotation = 0.61913
+shape = SubResource("RectangleShape2D_j1ft0")
+
+[node name="RightFeeler" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightFeeler"]
+position = Vector2(37.9335, 53.7816)
+rotation = -0.74995
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_j1ft0")
+
+[node name="RightCannonLocation" type="Marker2D" parent="."]
+position = Vector2(-24, 17)
