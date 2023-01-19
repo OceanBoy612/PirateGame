@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 60
-@export var turn_speed = 0.005
-@export var cannon_cooldown = 60
+@export var speed = 50
+@export var turn_speed = 0.008
+@export var cannon_cooldown = 120
 @export var health = 5
 @export var Cannon_ball = preload("res://Scenes/Cannon_ball/cannon_ball.tscn")
 
@@ -34,7 +34,7 @@ func _ready():
 	$RightFeeler.body_entered.connect(_on_RightFeeler_body_entered)
 	$RightFeeler.body_exited.connect(_on_RightFeeler_body_exited)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	cannon_timer += 1
 	if cannon_timer > cannon_cooldown:
 		can_shoot = true
@@ -42,7 +42,7 @@ func _physics_process(delta):
 	var next_rotation = 0
 	match state:
 		states.PATROL:
-			next_rotation = 0.1
+			next_rotation = 0
 		states.CHASE:
 			var goal_rotation = position.angle_to_point(target.position)
 			var diff_rotation = angle_to_angle(rotation, goal_rotation)
@@ -68,6 +68,7 @@ func _physics_process(delta):
 		get_parent().add_child(cannon_ball_instance)
 		cannon_ball_instance.global_position = $LeftCannonLocation.global_position
 		cannon_ball_instance.rotation = rotation + PI/4
+		cannon_ball_instance.set_starting_position()
 		$CannonSound.play()
 
 	if can_shoot and in_range_right:
@@ -78,6 +79,7 @@ func _physics_process(delta):
 		get_parent().add_child(cannon_ball_instance)
 		cannon_ball_instance.global_position = $RightCannonLocation.global_position
 		cannon_ball_instance.rotation = rotation + 3*PI/4
+		cannon_ball_instance.set_starting_position()
 		$CannonSound.play()
 
 	if things_in_right_feeler > 0:
@@ -154,6 +156,6 @@ func take_damage():
 	health -= 1
 
 
-static func angle_to_angle(from, to):
+func angle_to_angle(from, to):
 	return fposmod(to-from + PI, PI*2) - PI
 

@@ -17,18 +17,18 @@ radius = 676.074
 radius = 312.57
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omno3"]
-size = Vector2(341, 20)
+size = Vector2(277.139, 43.9026)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1ft0"]
-size = Vector2(4.83564, 51.9329)
+size = Vector2(28.2089, 128.966)
 
 [node name="Pirate" type="CharacterBody2D"]
 script = ExtResource("1_x4xys")
 
 [node name="Trail" parent="." instance=ExtResource("2_ljbbr")]
 modulate = Color(1, 1, 1, 1)
-width = 60.0
-trail_length = 200
+width = 50.0
+trail_length = 150
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
@@ -50,7 +50,7 @@ shape = SubResource("CircleShape2D_wl24s")
 [node name="FireArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea"]
-position = Vector2(136, 135)
+position = Vector2(160, 142)
 rotation = 0.8159
 shape = SubResource("RectangleShape2D_omno3")
 
@@ -59,8 +59,9 @@ position = Vector2(-9, -10)
 rotation = 1.49265
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireAreaRight"]
-position = Vector2(136, 135)
+position = Vector2(146.158, 164.965)
 rotation = 0.8159
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_omno3")
 
 [node name="LeftCannonLocation" type="Marker2D" parent="."]
@@ -77,16 +78,13 @@ volume_db = -11.886
 [node name="LeftFeeler" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFeeler"]
-position = Vector2(-36, 57)
-rotation = 0.61913
+position = Vector2(-34.8955, 38)
 shape = SubResource("RectangleShape2D_j1ft0")
 
 [node name="RightFeeler" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightFeeler"]
-position = Vector2(37.9335, 53.7816)
-rotation = -0.74995
-scale = Vector2(1, 1)
+position = Vector2(36, 35)
 shape = SubResource("RectangleShape2D_j1ft0")
 
 [node name="RightCannonLocation" type="Marker2D" parent="."]

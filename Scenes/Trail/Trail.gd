@@ -8,7 +8,7 @@ var point = Vector2()
 func ready():
 	set_as_top_level(true)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	global_position = Vector2(0,0)
 	global_rotation = 0
 	
