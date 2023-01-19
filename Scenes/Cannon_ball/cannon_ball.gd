@@ -6,6 +6,7 @@ var object_origin = null
 var starting_position = Vector2(0,0)
 var death_timer = 50
 var timer = 0
+var played_sound = false
 
 func init(object):
 	object_origin = object
@@ -20,6 +21,9 @@ func _process(_delta):
 	if global_position.distance_to(starting_position) > flying_range:
 		$Sprite2D.hide()
 		timer += 1
+		if played_sound == false:
+			$MissSound.play()
+			played_sound = true
 	else:
 		position += Vector2(speed, 0).rotated(rotation)
 	if timer > death_timer:

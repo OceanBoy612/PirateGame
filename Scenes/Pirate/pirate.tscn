@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dc8cgxox2xpsa" path="res://Art/ship (2).png" id="1_h6wpq"]
 [ext_resource type="Script" path="res://Scenes/Pirate/pirate.gd" id="1_x4xys"]
 [ext_resource type="PackedScene" uid="uid://cgwma8wvt2uv8" path="res://Scenes/Trail/Trail.tscn" id="2_ljbbr"]
-[ext_resource type="AudioStream" uid="uid://cn6hn8fv6eta5" path="res://Sounds/Cannon.mp3" id="3_y0cxf"]
-[ext_resource type="AudioStream" uid="uid://chyj3mcoojehg" path="res://Sounds/Crush.mp3" id="5_jlw8w"]
+[ext_resource type="AudioStream" uid="uid://dff7iyk45a6g2" path="res://Sounds/cannon_fire.ogg" id="4_24rcm"]
+[ext_resource type="AudioStream" uid="uid://dlndod1bi6hf3" path="res://Sounds/ExplosionMetal.ogg" id="5_p0sjw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwpio"]
 radius = 17.0
@@ -61,19 +61,18 @@ rotation = 1.49265
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireAreaRight"]
 position = Vector2(146.158, 164.965)
 rotation = 0.8159
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_omno3")
 
 [node name="LeftCannonLocation" type="Marker2D" parent="."]
 position = Vector2(24, 17)
 
 [node name="CannonSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_y0cxf")
+stream = ExtResource("4_24rcm")
 volume_db = -15.0
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_jlw8w")
-volume_db = -11.886
+stream = ExtResource("5_p0sjw")
+volume_db = -16.613
 
 [node name="LeftFeeler" type="Area2D" parent="."]
 

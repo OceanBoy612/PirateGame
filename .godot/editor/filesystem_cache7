@@ -1,31 +1,36 @@
 0b7126e0c6e86d3ec295a72f5aa6e0bd
-::res://::1674141446
-Land.gd::GDScript::-1::1674140868::0::1::::<>TileMap<>::
-level_1.tscn::PackedScene::6145125406932896623::1674140954::0::1::::<><>::uid://dgn4nl1xoeilh<>uid://c6yrcllyjhdjf<>uid://b4tvsw1s6a3f2
-::res://Art/::1673905739
-cannon.png::CompressedTexture2D::6335335032105874207::1673905739::1673905739::1::::<><>::
-cannonBall.png::CompressedTexture2D::6340377879782119324::1673905739::1673905739::1::::<><>::
-cannonLoose.png::CompressedTexture2D::3294485173046910333::1673905739::1673905739::1::::<><>::
-icon.svg::CompressedTexture2D::1737131531299710041::1673905739::1673905739::1::::<><>::
-ship (1).png::CompressedTexture2D::3844356202155147027::1673905739::1673905739::1::::<><>::
-ship (2).png::CompressedTexture2D::7367897583734635752::1673905739::1673905739::1::::<><>::
-tiles_sheet@2.png::CompressedTexture2D::7609016650806922365::1673905739::1673905739::1::::<><>::
-::res://Scenes/::1674070320
-::res://Scenes/Cannon_ball/::1674141113
-cannon_ball.gd::GDScript::-1::1674141113::0::1::::<>Area2D<>::
-cannon_ball.tscn::PackedScene::9054621443705242010::1674140954::0::1::::<><>::res://Scenes/Cannon_ball/cannon_ball.gd<>uid://cwlldkr25jvlk<>uid://cgwma8wvt2uv8<>uid://c3n76rypp2gx
-::res://Scenes/Pirate/::1674141113
-pirate.gd::GDScript::-1::1674140953::0::1::::<>CharacterBody2D<>::
-pirate.tscn::PackedScene::4462428724199474405::1674141113::0::1::::<><>::uid://dc8cgxox2xpsa<>res://Scenes/Pirate/pirate.gd<>uid://cgwma8wvt2uv8<>uid://cn6hn8fv6eta5<>uid://chyj3mcoojehg
-::res://Scenes/Player/::1674140954
-Cannon.gd::GDScript::-1::1674140632::0::1::::<>Marker2D<>::
-Player.gd::GDScript::-1::1674140607::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::6999276942579936587::1674140954::0::1::::<><>::res://Scenes/Player/Player.gd<>uid://bu1h8qvy66xtj<>uid://dh6wlbqyfktve<>uid://cn6hn8fv6eta5<>uid://bm64xpa6jtc8l<>res://Scenes/Player/Cannon.gd
-::res://Scenes/Trail/::1674140594
-marker_2d.tscn::PackedScene::7715935162832967354::1674105830::0::1::::<><>::uid://cgwma8wvt2uv8
-Trail.gd::GDScript::-1::1674140594::0::1::::<>Line2D<>::
-Trail.tscn::PackedScene::5240121111953780323::1674105116::0::1::::<><>::res://Scenes/Trail/Trail.gd
-::res://Sounds/::1674070320
-Cannon.mp3::AudioStreamMP3::5749742021316931418::1673905739::1673905739::1::::<><>::
-crashing through debris 14.mp3::AudioStreamMP3::199028386297304951::1674070320::1674070320::1::::<><>::
-Crush.mp3::AudioStreamMP3::5314305428139072492::1674070320::1674070320::1::::<><>::
+::res://::1674154216
+Land.gd::GDScript::-1::1674153133::0::1::::<>TileMap<>::
+level_1.tscn::PackedScene::6145125406932896623::1674154216::0::1::::<><>::uid://dgn4nl1xoeilh<>uid://c6yrcllyjhdjf<>uid://b4tvsw1s6a3f2
+::res://Art/::1673895792
+cannon.png::CompressedTexture2D::6335335032105874207::1673895733::1673895735::1::::<><>::
+cannonBall.png::CompressedTexture2D::6340377879782119324::1673849186::1673852372::1::::<><>::
+cannonLoose.png::CompressedTexture2D::3294485173046910333::1673895792::1673895792::1::::<><>::
+icon.svg::CompressedTexture2D::1737131531299710041::1673836209::1673852374::1::::<><>::
+ship (1).png::CompressedTexture2D::3844356202155147027::1673836375::1673852378::1::::<><>::
+ship (2).png::CompressedTexture2D::7367897583734635752::1673855581::1673855588::1::::<><>::
+tiles_sheet@2.png::CompressedTexture2D::7609016650806922365::1673836459::1673852378::1::::<><>::
+::res://Scenes/::1674062023
+::res://Scenes/Cannon_ball/::1674154216
+cannon_ball.gd::GDScript::-1::1674153133::0::1::::<>Area2D<>::
+cannon_ball.tscn::PackedScene::9054621443705242010::1674154216::0::1::::<><>::res://Scenes/Cannon_ball/cannon_ball.gd<>uid://cwlldkr25jvlk<>uid://cgwma8wvt2uv8<>uid://c3n76rypp2gx
+::res://Scenes/Pirate/::1674154216
+pirate.gd::GDScript::-1::1674153133::0::1::::<>CharacterBody2D<>::
+pirate.tscn::PackedScene::4462428724199474405::1674154216::0::1::::<><>::uid://dc8cgxox2xpsa<>res://Scenes/Pirate/pirate.gd<>uid://cgwma8wvt2uv8<>uid://dff7iyk45a6g2<>uid://dlndod1bi6hf3
+::res://Scenes/Player/::1674154216
+Cannon.gd::GDScript::-1::1674153133::0::1::::<>Marker2D<>::
+Player.gd::GDScript::-1::1674154042::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::6999276942579936587::1674154216::0::1::::<><>::res://Scenes/Player/Player.gd<>uid://bu1h8qvy66xtj<>uid://dh6wlbqyfktve<>uid://dff7iyk45a6g2<>uid://bm64xpa6jtc8l<>res://Scenes/Player/Cannon.gd<>uid://ch4116wwy5v48
+::res://Scenes/Trail/::1674153133
+marker_2d.tscn::PackedScene::7715935162832967354::1674153133::0::1::::<><>::uid://cgwma8wvt2uv8
+Trail.gd::GDScript::-1::1674153133::0::1::::<>Line2D<>::
+Trail.tscn::PackedScene::5240121111953780323::1674070217::0::1::::<><>::res://Scenes/Trail/Trail.gd
+::res://Sounds/::1674154368
+BattleShipMovementAmbient.ogg::AudioStreamOggVorbis::5325656963416025087::1674153985::1674153985::1::::<><>::
+Cannon.mp3::AudioStreamMP3::5749742021316931418::1673856467::1673856767::1::::<><>::
+cannon_fire.ogg::AudioStreamOggVorbis::7522486665525731043::1674153171::1674153181::1::::<><>::
+cannon_hit.ogg::AudioStreamOggVorbis::927120137441572520::1674153310::1674153310::1::::<><>::
+crashing through debris 14.mp3::AudioStreamMP3::199028386297304951::1674064555::1674064609::1::::<><>::
+Crush.mp3::AudioStreamMP3::5314305428139072492::1674067736::1674067760::1::::<><>::
+ExplosionMetal.ogg::AudioStreamOggVorbis::7958383591785722490::1674154094::1674154151::1::::<><>::
+Water_crash.mp3::AudioStreamMP3::1260469644553241025::1674154368::1674154388::1::::<><>::

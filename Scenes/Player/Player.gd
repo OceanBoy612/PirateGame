@@ -10,6 +10,7 @@ var cannon_timer = 0
 
 func _ready():
 	set_meta("object", "player")
+	$SailingSounds.play()
 
 func _physics_process(_delta):
 	var goal_rotation = position.angle_to_point(get_global_mouse_position())

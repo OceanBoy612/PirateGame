@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6yrcllyjhdjf"]
+[gd_scene load_steps=9 format=3 uid="uid://c6yrcllyjhdjf"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_dliua"]
 [ext_resource type="Texture2D" uid="uid://bu1h8qvy66xtj" path="res://Art/ship (1).png" id="2_lr03s"]
 [ext_resource type="PackedScene" uid="uid://dh6wlbqyfktve" path="res://Scenes/Trail/marker_2d.tscn" id="2_y6w1q"]
-[ext_resource type="AudioStream" uid="uid://cn6hn8fv6eta5" path="res://Sounds/Cannon.mp3" id="3_ene07"]
+[ext_resource type="AudioStream" uid="uid://dff7iyk45a6g2" path="res://Sounds/cannon_fire.ogg" id="4_hkdr5"]
 [ext_resource type="Texture2D" uid="uid://bm64xpa6jtc8l" path="res://Art/cannonLoose.png" id="4_l1f30"]
 [ext_resource type="Script" path="res://Scenes/Player/Cannon.gd" id="6_byy5p"]
+[ext_resource type="AudioStream" uid="uid://ch4116wwy5v48" path="res://Sounds/BattleShipMovementAmbient.ogg" id="7_8c0k1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3d612"]
 radius = 17.0
@@ -31,7 +32,7 @@ current = true
 position = Vector2(18, 0)
 
 [node name="CannonSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ene07")
+stream = ExtResource("4_hkdr5")
 volume_db = -15.0
 
 [node name="Cannon" type="Marker2D" parent="."]
@@ -44,3 +45,7 @@ texture = ExtResource("4_l1f30")
 
 [node name="FireLocation" type="Marker2D" parent="Cannon"]
 position = Vector2(13, 0)
+
+[node name="SailingSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8c0k1")
+volume_db = -21.058
