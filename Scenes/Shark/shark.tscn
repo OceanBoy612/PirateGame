@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyme27i0gcyf"]
+
+[ext_resource type="Texture2D" uid="uid://2dtr2pgogbt1" path="res://Art/depositphotos_151222150-stock-illustration-set-of-images-with-marine-removebg-preview-removebg-preview.png" id="1_fefnn"]
+
+[sub_resource type="Animation" id="Animation_3akpw"]
+resource_name = "Swim"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqkgg"]
+_data = {
+"Swim": SubResource("Animation_3akpw")
+}
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_qal36"]
+
+[node name="Shark" type="AnimationPlayer"]
+root_node = NodePath("Body")
+libraries = {
+"": SubResource("AnimationLibrary_jqkgg")
+}
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+modification_stack = SubResource("SkeletonModificationStack2D_qal36")
+
+[node name="Tail2" type="Sprite2D" parent="Skeleton2D"]
+position = Vector2(-4, 35)
+rotation = -0.292069
+scale = Vector2(1, 1)
+texture = ExtResource("1_fefnn")
+region_enabled = true
+region_rect = Rect2(170, 161, 33, 26)
+
+[node name="Tail3" type="Sprite2D" parent="Skeleton2D"]
+position = Vector2(-1, 58)
+rotation = -0.459835
+scale = Vector2(1, 1)
+texture = ExtResource("1_fefnn")
+region_enabled = true
+region_rect = Rect2(160, 169, 42, 46)
+
+[node name="TailEnd" type="Sprite2D" parent="Skeleton2D"]
+position = Vector2(2, 118)
+rotation = -0.653909
+scale = Vector2(1, 1)
+texture = ExtResource("1_fefnn")
+region_enabled = true
+region_rect = Rect2(127, 208, 43, 72)
+
+[node name="BodyBone2D" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(-1, -49)
+rotation = 0.132237
+rest = Transform2D(0.991269, 0.131852, -0.131852, 0.991269, -1, -49)
+
+[node name="Body" type="Sprite2D" parent="Skeleton2D/BodyBone2D"]
+texture = ExtResource("1_fefnn")
+region_enabled = true
+region_rect = Rect2(120, 19, 133, 119)
+
+[node name="Tail1Bone2D" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(-7, 14)
+rest = Transform2D(1, 0, 0, 1, -7, 14)
+
+[node name="Tail1" type="Sprite2D" parent="Skeleton2D/Tail1Bone2D"]
+texture = ExtResource("1_fefnn")
+region_enabled = true
+region_rect = Rect2(157, 135, 61, 31)

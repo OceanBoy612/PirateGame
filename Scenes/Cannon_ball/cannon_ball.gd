@@ -1,15 +1,17 @@
 extends Area2D
 
-@export var speed = 5
+@export var speed = 4
 @export var flying_range = 400
 var object_origin = null
 var starting_position = Vector2(0,0)
 var death_timer = 50
 var timer = 0
 var played_sound = false
+var starting_velocity = Vector2(0,0)
 
-func init(object):
+func init(object, s_v):
 	object_origin = object
+	starting_velocity = s_v
 
 func set_starting_position():
 	starting_position = global_position
@@ -22,10 +24,9 @@ func _process(_delta):
 		$Sprite2D.hide()
 		timer += 1
 		if played_sound == false:
-			$MissSound.play()
 			played_sound = true
 	else:
-		position += Vector2(speed, 0).rotated(rotation)
+		position += Vector2(speed, 0).rotated(rotation) + starting_velocity
 	if timer > death_timer:
 		queue_free()
 

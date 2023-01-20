@@ -1,11 +1,14 @@
+AnimationPlayer
+Skeleton2D
+Sprite2D
+GPUParticles2D
+Line2D
 AudioStreamPlayer
 CPUParticles2D
 Marker2D
 Area2D
-Sprite2D
 CollisionShape2D
 CollisionPolygon2D
-Line2D
 ColorRect
 AudioStreamPlayer2D
 CharacterBody2D

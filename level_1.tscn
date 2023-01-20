@@ -611,4 +611,4 @@ position = Vector2(-1331, 66)
 position = Vector2(-866, 1196)
 
 [node name="Pirate4" parent="." instance=ExtResource("3_skkuw")]
-position = Vector2(557, 1358)
+position = Vector2(589, 1082)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6yrcllyjhdjf"]
+[gd_scene load_steps=11 format=3 uid="uid://c6yrcllyjhdjf"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_dliua"]
 [ext_resource type="Texture2D" uid="uid://bu1h8qvy66xtj" path="res://Art/ship (1).png" id="2_lr03s"]
@@ -9,8 +9,53 @@
 [ext_resource type="AudioStream" uid="uid://ch4116wwy5v48" path="res://Sounds/BattleShipMovementAmbient.ogg" id="7_8c0k1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3d612"]
-radius = 17.0
-height = 88.0
+radius = 18.0
+height = 100.0
+
+[sub_resource type="Animation" id="Animation_rm5i0"]
+resource_name = "Fire"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CannonArt:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1, 2, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 1), Vector2(0.6, 1), Vector2(1.2, 1), Vector2(0.9, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CannonArt:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 1, 2, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5, 0), Vector2(2, 0), Vector2(8, 0), Vector2(5, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CannonArt:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 1, 2, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.741176, 0.564706, 1), Color(1, 0.956863, 0.827451, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3eyn"]
+_data = {
+"Fire": SubResource("Animation_rm5i0")
+}
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -19,10 +64,11 @@ script = ExtResource("1_dliua")
 [node name="Marker2D" parent="." instance=ExtResource("2_y6w1q")]
 
 [node name="ShipArt" type="Sprite2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, -7)
 texture = ExtResource("2_lr03s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_3d612")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -35,12 +81,20 @@ position = Vector2(18, 0)
 stream = ExtResource("4_hkdr5")
 volume_db = -15.0
 
+[node name="FireAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Cannon")
+playback_speed = 19.35
+libraries = {
+"": SubResource("AnimationLibrary_p3eyn")
+}
+
 [node name="Cannon" type="Marker2D" parent="."]
-position = Vector2(0, 32)
+position = Vector2(0, 25)
 script = ExtResource("6_byy5p")
 
 [node name="CannonArt" type="Sprite2D" parent="Cannon"]
-position = Vector2(5, 0)
+position = Vector2(8, 0)
+scale = Vector2(1.2, 1)
 texture = ExtResource("4_l1f30")
 
 [node name="FireLocation" type="Marker2D" parent="Cannon"]
@@ -48,4 +102,4 @@ position = Vector2(13, 0)
 
 [node name="SailingSounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_8c0k1")
-volume_db = -21.058
+volume_db = -25.0

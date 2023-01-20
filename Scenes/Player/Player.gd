@@ -15,9 +15,9 @@ func _ready():
 func _physics_process(_delta):
 	var goal_rotation = position.angle_to_point(get_global_mouse_position())
 	var diff_rotation = angle_to_angle(rotation, goal_rotation)
-	if diff_rotation > 0:
+	if diff_rotation > -PI/8 or diff_rotation < -PI/8*7:
 		$Cannon.look_at(get_global_mouse_position())
-	
+	print(diff_rotation)
 	cannon_timer += 1
 	if cannon_timer > cannon_cooldown:
 		can_shoot = true
@@ -35,8 +35,9 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("ui_accept") and can_shoot:
 		can_shoot = false
 		cannon_timer = 0
+		$FireAnimation.play("Fire")
 		var cannon_ball_instance = Cannon_ball.instantiate()
-		cannon_ball_instance.init("player")
+		cannon_ball_instance.init("player", velocity*0.01)
 		get_parent().add_child(cannon_ball_instance)
 		cannon_ball_instance.global_position = get_node("Cannon/FireLocation").global_position
 		cannon_ball_instance.rotation = $Cannon.global_rotation

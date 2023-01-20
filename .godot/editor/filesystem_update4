@@ -1,6 +1,7 @@
-res://Scenes/Player/player.tscn
 res://Scenes/Cannon_ball/cannon_ball.tscn
 res://level_1.tscn
+res://Scenes/Player/player.tscn
 res://Scenes/Pirate/pirate.tscn
 res://Scenes/Player/Player.gd
-res://Scenes/Cannon_ball/cannon_ball.gd
+res://Scenes/Pirate/pirate.gd
+res://Scenes/Shark/shark.tscn

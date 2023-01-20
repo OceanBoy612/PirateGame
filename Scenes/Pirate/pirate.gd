@@ -42,7 +42,7 @@ func _physics_process(_delta):
 	var next_rotation = 0
 	match state:
 		states.PATROL:
-			next_rotation = 0
+			next_rotation = turn_speed
 		states.CHASE:
 			var goal_rotation = position.angle_to_point(target.position)
 			var diff_rotation = angle_to_angle(rotation, goal_rotation)
@@ -64,7 +64,7 @@ func _physics_process(_delta):
 		can_shoot = false
 		cannon_timer = 0
 		var cannon_ball_instance = Cannon_ball.instantiate()
-		cannon_ball_instance.init("pirate")
+		cannon_ball_instance.init("pirate", velocity*0.01)
 		get_parent().add_child(cannon_ball_instance)
 		cannon_ball_instance.global_position = $LeftCannonLocation.global_position
 		cannon_ball_instance.rotation = rotation + PI/4
@@ -75,7 +75,7 @@ func _physics_process(_delta):
 		can_shoot = false
 		cannon_timer = 0
 		var cannon_ball_instance = Cannon_ball.instantiate()
-		cannon_ball_instance.init("pirate")
+		cannon_ball_instance.init("pirate", velocity*0.02)
 		get_parent().add_child(cannon_ball_instance)
 		cannon_ball_instance.global_position = $RightCannonLocation.global_position
 		cannon_ball_instance.rotation = rotation + 3*PI/4
