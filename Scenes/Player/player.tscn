@@ -10,7 +10,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3d612"]
 radius = 18.0
-height = 100.0
+height = 104.0
 
 [sub_resource type="Animation" id="Animation_rm5i0"]
 resource_name = "Fire"
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.1, 1, 2, 3.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.9, 1), Vector2(0.6, 1), Vector2(1.2, 1), Vector2(0.9, 1)]
+"values": [Vector2(0.9, 1), Vector2(0.6, 1), Vector2(1, 0.833), Vector2(0.9, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -37,7 +37,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.1, 1, 2, 3.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(5, 0), Vector2(2, 0), Vector2(8, 0), Vector2(5, 0)]
+"values": [Vector2(5, 0), Vector2(2, 0), Vector2(-1, 0), Vector2(5, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -68,7 +68,8 @@ position = Vector2(0, -7)
 texture = ExtResource("2_lr03s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+visible = false
+position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_3d612")
 
 [node name="LeftCannonLocation" type="Marker2D" parent="."]
@@ -90,8 +91,8 @@ position = Vector2(0, 25)
 script = ExtResource("6_byy5p")
 
 [node name="CannonArt" type="Sprite2D" parent="Cannon"]
-position = Vector2(8, 0)
-scale = Vector2(1.2, 1)
+position = Vector2(5, 0)
+scale = Vector2(0.9, 1)
 texture = ExtResource("4_l1f30")
 
 [node name="FireLocation" type="Marker2D" parent="Cannon"]

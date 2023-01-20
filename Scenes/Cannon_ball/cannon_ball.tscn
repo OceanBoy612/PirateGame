@@ -1,12 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2aej642yvpxi"]
+[gd_scene load_steps=10 format=3 uid="uid://d2aej642yvpxi"]
 
 [ext_resource type="Script" path="res://Scenes/Cannon_ball/cannon_ball.gd" id="1_13qto"]
 [ext_resource type="Texture2D" uid="uid://cwlldkr25jvlk" path="res://Art/cannonBall.png" id="1_vaj3o"]
 [ext_resource type="PackedScene" uid="uid://cgwma8wvt2uv8" path="res://Scenes/Trail/Trail.tscn" id="2_6yg2b"]
 [ext_resource type="AudioStream" uid="uid://r7t0sa63jr18" path="res://Sounds/Water_crash.mp3" id="4_qjdj7"]
+[ext_resource type="Texture2D" uid="uid://dgypbhrvmqawh" path="res://Art/explosion3.png" id="5_fu1it"]
+[ext_resource type="Texture2D" uid="uid://ckoyu1rx2lrg3" path="res://Art/explosion2.png" id="6_vp8hh"]
+[ext_resource type="Texture2D" uid="uid://bgnckssb5x7p1" path="res://Art/explosion1.png" id="7_m3t4y"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gys1h"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_od4bl"]
 radius = 4.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nwne6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fu1it")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vp8hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m3t4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vp8hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fu1it")
+}],
+"loop": false,
+"name": &"Explode",
+"speed": 20.0
+}]
 
 [node name="CannonBall" type="Area2D"]
 z_index = 2
@@ -21,8 +47,12 @@ trail_length = 20
 texture = ExtResource("1_vaj3o")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_gys1h")
+shape = SubResource("CircleShape2D_od4bl")
 
 [node name="MissSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_qjdj7")
 volume_db = -23.636
+
+[node name="Explode" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_nwne6")
+animation = &"Explode"

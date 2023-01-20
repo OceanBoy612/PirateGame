@@ -1,6 +1,6 @@
 extends Camera2D
 
-@export var camera_speed = 0.02
+@export var camera_speed = 0.01
 @export var max_view = 80
 
 @onready var player: CharacterBody2D = get_parent().get_node("Player")
