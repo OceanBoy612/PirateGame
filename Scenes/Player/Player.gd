@@ -17,7 +17,6 @@ func _physics_process(_delta):
 	var diff_rotation = angle_to_angle(rotation, goal_rotation)
 	if diff_rotation > -PI/8 or diff_rotation < -PI/8*7:
 		$Cannon.look_at(get_global_mouse_position())
-	print(diff_rotation)
 	cannon_timer += 1
 	if cannon_timer > cannon_cooldown:
 		can_shoot = true

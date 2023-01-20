@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cts0k2gpi73ex"]
+[gd_scene load_steps=9 format=3 uid="uid://cts0k2gpi73ex"]
 
 [ext_resource type="Texture2D" uid="uid://dgn4nl1xoeilh" path="res://Art/tiles_sheet@2.png" id="1_ylv2t"]
 [ext_resource type="PackedScene" uid="uid://c6yrcllyjhdjf" path="res://Scenes/Player/player.tscn" id="2_hisio"]
 [ext_resource type="PackedScene" uid="uid://b4tvsw1s6a3f2" path="res://Scenes/Pirate/pirate.tscn" id="3_skkuw"]
+[ext_resource type="Script" path="res://PlayerCamera.gd" id="4_kvxlx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82e88"]
 texture = ExtResource("1_ylv2t")
@@ -612,3 +613,7 @@ position = Vector2(-866, 1196)
 
 [node name="Pirate4" parent="." instance=ExtResource("3_skkuw")]
 position = Vector2(589, 1082)
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+current = true
+script = ExtResource("4_kvxlx")

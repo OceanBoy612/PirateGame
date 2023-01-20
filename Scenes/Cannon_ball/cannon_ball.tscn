@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cgwma8wvt2uv8" path="res://Scenes/Trail/Trail.tscn" id="2_6yg2b"]
 [ext_resource type="AudioStream" uid="uid://r7t0sa63jr18" path="res://Sounds/Water_crash.mp3" id="4_qjdj7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gkb8s"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gys1h"]
 radius = 4.0
 
 [node name="CannonBall" type="Area2D"]
@@ -21,7 +21,7 @@ trail_length = 20
 texture = ExtResource("1_vaj3o")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_gkb8s")
+shape = SubResource("CircleShape2D_gys1h")
 
 [node name="MissSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_qjdj7")
