@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyme27i0gcyf"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Texture2D" uid="uid://2dtr2pgogbt1" path="res://Art/depositphotos_151222150-stock-illustration-set-of-images-with-marine-removebg-preview-removebg-preview.png" id="1_fefnn"]
+[ext_resource type="Texture2D" uid="uid://2dtr2pgogbt1" path="res://Art/FishSheet.png" id="1_fefnn"]
 
 [sub_resource type="Animation" id="Animation_3akpw"]
 resource_name = "Swim"

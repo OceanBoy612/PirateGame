@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 6
+@export var speed = 5
 @export var flying_range = 400
 var object_origin = null
 var starting_position = Vector2(0,0)

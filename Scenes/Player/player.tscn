@@ -81,7 +81,7 @@ volume_db = -15.0
 
 [node name="FireAnimation" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Cannon")
-playback_speed = 19.35
+playback_speed = 20.0
 libraries = {
 "": SubResource("AnimationLibrary_p3eyn")
 }

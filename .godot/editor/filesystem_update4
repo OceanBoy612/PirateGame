@@ -1,5 +1,4 @@
 res://Scenes/Cannon_ball/cannon_ball.tscn
+res://Scenes/Pirate/pirate.tscn
 res://level_1.tscn
 res://Scenes/Player/player.tscn
-res://PlayerCamera.gd
-res://Scenes/Cannon_ball/cannon_ball.gd

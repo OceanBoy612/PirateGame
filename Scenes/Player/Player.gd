@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var Cannon_ball = preload("res://Scenes/Cannon_ball/cannon_ball.tscn")
-@export var speed = 100
+@export var speed = 120
 @export var cannon_cooldown = 140
 @export var health = 5
 
@@ -13,6 +13,14 @@ func _ready():
 	$SailingSounds.play()
 
 func _physics_process(_delta):
+	if global_position.x > 2300:
+		global_position.x = 2200
+	if global_position.x < -2300:
+		global_position.x = -2200
+	if global_position.y > 2000:
+		global_position.y = 1900
+	if global_position.y < -2000:
+		global_position.y = -1900
 	var goal_rotation = position.angle_to_point(get_global_mouse_position())
 	var diff_rotation = angle_to_angle(rotation, goal_rotation)
 	if diff_rotation > -PI/8 or diff_rotation < -PI/8*7:

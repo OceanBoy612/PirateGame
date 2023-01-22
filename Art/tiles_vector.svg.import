@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2dtr2pgogbt1"
-path="res://.godot/imported/depositphotos_151222150-stock-illustration-set-of-images-with-marine-removebg-preview-removebg-preview.png-495e24c883a936ae67e2c9a401305eba.ctex"
+uid="uid://df6m7200wdopr"
+path="res://.godot/imported/tiles_vector.svg-d44dc6ebd62766f2331dc2ae8a242f2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/depositphotos_151222150-stock-illustration-set-of-images-with-marine-removebg-preview-removebg-preview.png"
-dest_files=["res://.godot/imported/depositphotos_151222150-stock-illustration-set-of-images-with-marine-removebg-preview-removebg-preview.png-495e24c883a936ae67e2c9a401305eba.ctex"]
+source_file="res://Art/tiles_vector.svg"
+dest_files=["res://.godot/imported/tiles_vector.svg-d44dc6ebd62766f2331dc2ae8a242f2f.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

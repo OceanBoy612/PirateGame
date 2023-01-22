@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 50
-@export var turn_speed = 0.008
+@export var turn_speed = 0.005
 @export var cannon_cooldown = 120
 @export var health = 5
 @export var Cannon_ball = preload("res://Scenes/Cannon_ball/cannon_ball.tscn")
@@ -35,6 +35,14 @@ func _ready():
 	$RightFeeler.body_exited.connect(_on_RightFeeler_body_exited)
 
 func _physics_process(_delta):
+	if global_position.x > 2300:
+		global_position.x = 2200
+	if global_position.x < -2300:
+		global_position.x = -2200
+	if global_position.y > 2000:
+		global_position.y = 1900
+	if global_position.y < -2000:
+		global_position.y = -1900
 	cannon_timer += 1
 	if cannon_timer > cannon_cooldown:
 		can_shoot = true
@@ -62,25 +70,11 @@ func _physics_process(_delta):
 	
 	if can_shoot and in_range:
 		can_shoot = false
-		cannon_timer = 0
-		var cannon_ball_instance = Cannon_ball.instantiate()
-		cannon_ball_instance.init("pirate", velocity*0.01)
-		get_parent().add_child(cannon_ball_instance)
-		cannon_ball_instance.global_position = $LeftCannonLocation.global_position
-		cannon_ball_instance.rotation = rotation + PI/4
-		cannon_ball_instance.set_starting_position()
-		$CannonSound.play()
+		$AnimateLeftCannon.play("Fire")
 
 	if can_shoot and in_range_right:
 		can_shoot = false
-		cannon_timer = 0
-		var cannon_ball_instance = Cannon_ball.instantiate()
-		cannon_ball_instance.init("pirate", velocity*0.02)
-		get_parent().add_child(cannon_ball_instance)
-		cannon_ball_instance.global_position = $RightCannonLocation.global_position
-		cannon_ball_instance.rotation = rotation + 3*PI/4
-		cannon_ball_instance.set_starting_position()
-		$CannonSound.play()
+		$AnimateRightCannon.play("Fire")
 
 	if things_in_right_feeler > 0:
 		rotate(turn_speed)
@@ -159,3 +153,23 @@ func take_damage():
 func angle_to_angle(from, to):
 	return fposmod(to-from + PI, PI*2) - PI
 
+func _on_animation_fire_left():
+	cannon_timer = 0
+	var cannon_ball_instance = Cannon_ball.instantiate()
+	cannon_ball_instance.init("pirate", velocity*0.01)
+	get_parent().add_child(cannon_ball_instance)
+	cannon_ball_instance.global_position = $LeftCannonLocation.global_position
+	cannon_ball_instance.rotation = rotation + PI/4
+	cannon_ball_instance.set_starting_position()
+	$CannonSound.play()
+
+
+func _on_animation_fire_right():
+	cannon_timer = 0
+	var cannon_ball_instance = Cannon_ball.instantiate()
+	cannon_ball_instance.init("pirate", velocity*0.02)
+	get_parent().add_child(cannon_ball_instance)
+	cannon_ball_instance.global_position = $RightCannonLocation.global_position
+	cannon_ball_instance.rotation = rotation + 3*PI/4
+	cannon_ball_instance.set_starting_position()
+	$CannonSound.play()

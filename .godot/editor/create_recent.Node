@@ -1,8 +1,9 @@
+AnimationPlayer
+Sprite2D
+Node
 AnimatedSprite2D
 Camera2D
-AnimationPlayer
 Skeleton2D
-Sprite2D
 GPUParticles2D
 Line2D
 AudioStreamPlayer
