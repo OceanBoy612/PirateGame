@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwsqnv1le0vo3"]
+
+[ext_resource type="Shader" path="res://Ocean.gdshader" id="1_3iuml"]
+[ext_resource type="Texture2D" uid="uid://bwmjnm3oj66sb" path="res://Art/tile_73.png" id="2_q3rcl"]
+[ext_resource type="Script" path="res://Ocean.gd" id="3_xm7kf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ltg2"]
+shader = ExtResource("1_3iuml")
+shader_parameter/time_scale = Vector2(1, 1)
+shader_parameter/offset_scale = Vector2(2, 2)
+shader_parameter/amplitude = Vector2(2, 2)
+
+[node name="Ocean" type="Sprite2D"]
+material = SubResource("ShaderMaterial_1ltg2")
+position = Vector2(657.125, 532.25)
+scale = Vector2(18.2148, 18.2109)
+texture = ExtResource("2_q3rcl")
+region_rect = Rect2(1024, 512, 128, 128)
+script = ExtResource("3_xm7kf")
+
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]

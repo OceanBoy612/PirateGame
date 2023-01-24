@@ -15,9 +15,9 @@ run/main_scene="res://level_1.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://Art/icon.svg"
 
-[display]
+[editor]
 
-window/stretch/mode="viewport"
+export/convert_text_resources_to_binary=true
 
 [input]
 
