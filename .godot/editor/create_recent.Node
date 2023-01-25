@@ -1,3 +1,4 @@
+TileMap
 Sprite2D
 AnimationPlayer
 Node
@@ -15,4 +16,3 @@ CollisionPolygon2D
 ColorRect
 AudioStreamPlayer2D
 CharacterBody2D
-TileMap

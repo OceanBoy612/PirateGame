@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://ckoyu1rx2lrg3" path="res://Art/explosion2.png" id="6_vp8hh"]
 [ext_resource type="Texture2D" uid="uid://bgnckssb5x7p1" path="res://Art/explosion1.png" id="7_m3t4y"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r6ylf"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_3sjru"]
 radius = 3.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2m3rp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qstqo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -47,7 +47,7 @@ trail_length = 20
 texture = ExtResource("1_vaj3o")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_r6ylf")
+shape = SubResource("CircleShape2D_3sjru")
 
 [node name="MissSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_qjdj7")
@@ -55,5 +55,5 @@ volume_db = -23.636
 
 [node name="Explode" type="AnimatedSprite2D" parent="."]
 visible = false
-frames = SubResource("SpriteFrames_2m3rp")
+frames = SubResource("SpriteFrames_qstqo")
 animation = &"Explode"

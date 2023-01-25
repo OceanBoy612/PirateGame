@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4tvsw1s6a3f2"]
+[gd_scene load_steps=17 format=3 uid="uid://b4tvsw1s6a3f2"]
 
 [ext_resource type="Script" path="res://Scenes/Pirate/pirate.gd" id="1_x4xys"]
 [ext_resource type="PackedScene" uid="uid://cgwma8wvt2uv8" path="res://Scenes/Trail/Trail.tscn" id="2_ljbbr"]
 [ext_resource type="Texture2D" uid="uid://4i54tki02fak" path="res://Art/ShipSheet.png" id="3_ja7ip"]
+[ext_resource type="Shader" path="res://Scenes/Pirate/pirate.gdshader" id="3_khhvr"]
 [ext_resource type="AudioStream" uid="uid://dff7iyk45a6g2" path="res://Sounds/cannon_fire.ogg" id="4_24rcm"]
 [ext_resource type="AudioStream" uid="uid://dlndod1bi6hf3" path="res://Sounds/ExplosionMetal.ogg" id="5_p0sjw"]
 
@@ -124,6 +125,11 @@ _data = {
 "Fire": SubResource("Animation_hn3xr")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ccdo"]
+shader = ExtResource("3_khhvr")
+shader_parameter/flash_color = null
+shader_parameter/flash_modifier = 0.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwpio"]
 radius = 17.0
 height = 100.0
@@ -163,6 +169,7 @@ width = 50.0
 trail_length = 150
 
 [node name="ShipBody" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2ccdo")
 texture = ExtResource("3_ja7ip")
 region_enabled = true
 region_rect = Rect2(613, 0.00324583, 39, 107.997)
