@@ -565,6 +565,7 @@ sources/1 = SubResource("TileSetAtlasSource_nqiyt")
 
 [node name="Level 1" type="Node2D"]
 position = Vector2(452, -448)
+metadata/_edit_vertical_guides_ = [268.0]
 
 [node name="Ocean" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3sksl")
